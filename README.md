@@ -32,6 +32,8 @@ sudo kill -9 $(sudo lsof -ti:5001,5173,8001,8002,8003)
 netstat -ano | findstr :5001 :5173 :8001 :8002 :8003
 ```
 
+Zillacode previously used port 5000 which caused issues for many users and thus now uses port 5001 instead. If you are experiencing issues like problems endlessly loading please make sure you are using newest version of the `master` branch and the newest image from the [zillacode-frontend](https://hub.docker.com/r/davidzajac1/zillacode-frontend) Docker Hub repo and that you have inspected the IDE page to make sure there are no requests going to port 5000.
+
 ### Optional - Configuring Snowflake
 
 Note Snowflake is not Open Source thus to solve problems with DBT/Snowflake you need to add a `.env` file with Snowflake credentials in the `backend` directory. All problems except for DBT/Snowflake problem will work normally without the `.env` file.
