@@ -16,12 +16,23 @@ In addition to solving Zillacode problems you can also learn from the repo itsel
 ### Run Locally
 
 ```bash
-$ git clone https://github.com/davidzajac1/zillacode.git
-$ cd zillacode
-$ docker-compose up
+git clone https://github.com/davidzajac1/zillacode.git
+cd zillacode
+docker-compose up
 ```
 
 Then navigate to [http://localhost:5173](http://localhost:5173)
+
+**NOTE** Make sure nothing is running on ports 5001, 5173, 8001, 8002, 8003 before running locally. See the commands below to kill anything running on these ports:
+
+```bash
+# Mac/Linux
+sudo kill -9 $(sudo lsof -ti:5001,5173,8001,8002,8003)
+# Windows
+netstat -ano | findstr :5001 :5173 :8001 :8002 :8003
+```
+
+Zillacode previously used port 5000 which caused issues for many users and thus now uses port 5001 instead. If you are experiencing issues like problems endlessly loading please make sure you are using newest version of the `master` branch and the newest image from the [zillacode-frontend](https://hub.docker.com/r/davidzajac1/zillacode-frontend) Docker Hub repo and that you have inspected the IDE page to make sure there are no requests going to port 5000.
 
 ### Optional - Configuring Snowflake
 
@@ -71,7 +82,7 @@ To make a Pull Request fork the project then make a Pull Request to the `master`
 
 ### Frontend
 
-For making frontend changes, spin up the backend in the background using Docker by running `make up-backend`, this will spin up the backend on http://localhost:5000. Then run `make serve-frontend` to serve the frontend on http://localhost:3000. The frontend will send requests to the backend hosted locally.
+For making frontend changes, spin up the backend in the background using Docker by running `make up-backend`, this will spin up the backend on http://localhost:5000. Then run `make serve-frontend` to serve the frontend on http://localhost:5173. The frontend will send requests to the backend hosted locally.
 
 For adding new dependencies run `make add package=<PACKAGE TO INSTALL>`.
 
