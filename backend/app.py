@@ -75,6 +75,6 @@ def run_code():
 
 if __name__ == "__main__":
     if FLASK_DEBUG:
-        app.run(debug=True, host="0.0.0.0", port=5000)
+        app.run(debug=True, host="0.0.0.0", port=5001)
     else:
-        serve(app, host="0.0.0.0", port=5000)
+        serve(app, host="0.0.0.0", port=5001)

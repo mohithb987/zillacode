@@ -10,6 +10,6 @@ WORKDIR ${PROJECT_DIR}
 
 RUN pipenv install --system --deploy --dev
 
-EXPOSE 5000
+EXPOSE 5001
 
 ENTRYPOINT ["python", "app.py"]

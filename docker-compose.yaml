@@ -2,7 +2,7 @@ services:
   backend:
     image: davidzajac1/zillacode-backend:latest
     ports:
-      - 5001:5000
+      - 5001:5001
     extra_hosts:
       - host.docker.internal:host-gateway
     networks:
