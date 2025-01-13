@@ -79,7 +79,7 @@ export function Home() {
         <div className="container mx-auto">
           <PageTitle heading="Supported Frameworks">
             We are always keeping up to date with the industry to help you
-            practice the Big Data frameworks and lanuages employeers are asking
+            practice the Big Data frameworks and languages employers are asking
             for. See our supported frameworks below!
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
