@@ -62,11 +62,11 @@ def lambda_handler(event, context):
         if result != expected_output:
 
             print(
-                f"Returned Response: INCORRECT\n\nINPUT:\n{to_markdown(input_, True)}\n\nOUPUT:\n{to_markdown(result, False)}\n\nEXPECTED OUTPUT:\n{to_markdown(expected_output, False)}"
+                f"Returned Response: INCORRECT\n\nINPUT:\n{to_markdown(input_, True)}\n\nOUTPUT:\n{to_markdown(result, False)}\n\nEXPECTED OUTPUT:\n{to_markdown(expected_output, False)}"
             )
 
             return {
-                "result": f"INCORRECT\n\nINPUT:\n{to_markdown(input_, True)}\n\nOUPUT:\n{to_markdown(result, False)}\n\nEXPECTED OUTPUT:\n{to_markdown(expected_output, False)}"
+                "result": f"INCORRECT\n\nINPUT:\n{to_markdown(input_, True)}\n\nOUTPUT:\n{to_markdown(result, False)}\n\nEXPECTED OUTPUT:\n{to_markdown(expected_output, False)}"
             }
 
     return {"result": "Problem Correct!"}
